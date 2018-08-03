@@ -8,8 +8,8 @@ module.exports = {
 
     postHouse: (req, res) => {
         let db = req.app.get('db');
-        let {house_name, address, city, state, zipcode} = req.body;
-        db.createHouse([house_name, address, city, state, zipcode]).then(response => {
+        let {house_name, address, city, state, zipcode, image, monthly_mortgage_amount, desired_rent} = req.body;
+        db.createHouse([house_name, address, city, state, zipcode, image, monthly_mortgage_amount, desired_rent]).then(response => {
             res.status(200).send(response)
         })
      },
